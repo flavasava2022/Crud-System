@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <title>Crud Managment System</title>
+  </head>
+  <body>
+    <main>
+      <div class="header">
+        <h1>Crud</h1>
+        <p>Crud Managment System</p>
+      </div>
+      <div class="inputs">
+        <div class="title">
+          <label for="title">Enter Item Title</label>
+          <input id="title" type="text" placeholder="Item Title" />
+        </div>
+        <div class="prices">
+          <div class="price">
+            <div>
+              <label for="price">Price</label>
+              <input
+                onchange="getTotal()"
+                id="price"
+                type="number"
+                placeholder="Price"
+              />
+            </div>
+            <div>
+              <label for="taxes">tax</label>
+              <input
+                onchange="getTotal()"
+                id="taxes"
+                type="number"
+                placeholder="tax"
+              />
+            </div>
+            <div>
+              <label for="ads">Ads</label>
+              <input
+                onchange="getTotal()"
+                id="ads"
+                type="number"
+                placeholder="Ads"
+              />
+            </div>
+            <div>
+              <label for="discount">Discount</label>
+              <input
+                onchange="getTotal()"
+                id="discount"
+                type="number"
+                placeholder="Discount"
+              />
+            </div>
+          </div>
+          <div class="total">
+            <label for="total-item">Total :</label>
+            <span id="total-item">1000</span>
+          </div>
+        </div>
+        <div class="quantity">
+          <div>
+            <label for="quantity">Quantity</label>
+            <input
+              type="number"
+              onchange="getTotal()"
+              id="quantity"
+              placeholder="Quantity"
+              value="1"
+            />
+          </div>
+          <div>
+            <label for="category">Category</label>
+            <input type="text" id="category" placeholder="Category" />
+          </div>
+        </div>
+        <button id="create">Create</button>
+      </div>
+      <div class="results">
+        <div class="search-inputs">
+          <input
+            type="text"
+            onkeyup="searchWord(this.value)"
+            id="search"
+            placeholder="Search By Title"
+          />
+          <div class="btn-search">
+            <button onclick="searchType(this.id)" id="searchTitle">
+              Search By Title
+            </button>
+            <button onclick="searchType(this.id)" id="searchCat">
+              Search By Category
+            </button>
+          </div>
+        </div>
+        <div id="deleteAll"></div>
+        <table>
+          <tr>
+            <th>id</th>
+            <th>title</th>
+            <th>price</th>
+            <th>taxes</th>
+            <th>ads</th>
+            <th>discount</th>
+            <th>total</th>
+            <th>category</th>
+            <th>update</th>
+            <th>delete</th>
+          </tr>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
